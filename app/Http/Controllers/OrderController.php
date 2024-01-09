@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Support\Facades\Auth;
-use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
 
 class OrderController extends Controller
 {
@@ -40,7 +40,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $data = $order->orderItems()->get();
+        return view('orders.show', ['order_items' => $data]);
     }
 
     /**

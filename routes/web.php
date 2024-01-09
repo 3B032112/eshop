@@ -39,7 +39,8 @@ Route::patch('/products/{product}', [ProductController::class, 'update'])->name(
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 
 Route::resource('cart_items', CartItemController::class)->middleware(['auth', 'verified']);
-route::resource('orders', OrderController::class)->middleware(['auth', 'verified']);
+Route::get('orders', [OrderController::class, 'index'])->middleware(['auth', 'verified']);
+Route::get('orders/{order}', [OrderController::class, 'show'])->middleware(['auth', 'verified'])->name('orders.show');
 /*
 php artisan route:list 
 +--------+-----------+------------------------+------------------+------------------------------------------------+------------+
