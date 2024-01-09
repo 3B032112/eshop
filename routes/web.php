@@ -37,6 +37,8 @@ Route::patch('/products/{product}', [ProductController::class, 'update'])->name(
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 
 /*
+php artisan route:list 
++--------+-----------+------------------------+------------------+------------------------------------------------+------------+
   GET|HEAD        Products ........................................................................................................................................................................ Products.index › ProductController@index
   POST            Products ........................................................................................................................................................................ Products.store › ProductController@store
   GET|HEAD        Products/create ............................................................................................................................................................... Products.create › ProductController@create
@@ -44,7 +46,7 @@ Route::delete('/products/{product}', [ProductController::class, 'destroy'])->nam
   PUT|PATCH       Products/{Product} ............................................................................................................................................................ Products.update › ProductController@update
   DELETE          Products/{Product} .......................................................................................................................................................... Products.destroy › ProductController@destroy
   GET|HEAD        Products/{Product}/edit ........................................................................................................................................................... Products.edit › ProductController@edit
-
++--------+-----------+------------------------+------------------+------------------------------------------------+------------+
 路由名稱           | URL                      | 對應的控制器方法     | Restful 方法 | 路由作用
 products.index    |/products                 | GET                 | HEAD        | 顯示所有產品資料
 products.show     |/products/{Product}       | GET                 | HEAD        | 顯示單一產品資料
