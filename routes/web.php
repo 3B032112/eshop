@@ -4,6 +4,7 @@ use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,7 +39,7 @@ Route::patch('/products/{product}', [ProductController::class, 'update'])->name(
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 
 Route::resource('cart_items', CartItemController::class)->middleware(['auth', 'verified']);
-
+route::resource('orders', OrderController::class)->middleware(['auth', 'verified']);
 /*
 php artisan route:list 
 +--------+-----------+------------------------+------------------+------------------------------------------------+------------+
