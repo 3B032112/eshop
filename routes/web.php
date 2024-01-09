@@ -27,13 +27,13 @@ Route::resource("Products", ProductController::class);
   DELETE          Products/{Product} .......................................................................................................................................................... Products.destroy › ProductController@destroy
   GET|HEAD        Products/{Product}/edit ........................................................................................................................................................... Products.edit › ProductController@edit
 
-路由名稱           | URL                      | 對應的控制器方法     | Restful 方法
-products.index    |/products                 | GET                 | HEAD       
-products.show     |/products/{Product}       | GET                 | HEAD
-products.create   |/products/create          | GET                 | HEAD
-products.store    |/products                 | POST                | POST
-products.edit     |/products/{Product}/edit  | GET                 | HEAD
-products.update   |/products/{Product}       | PUT                 | PATCH
-products.destroy  |/products/{Product}       | DELETE              | DELETE
+路由名稱           | URL                      | 對應的控制器方法     | Restful 方法 | 路由作用
+products.index    |/products                 | GET                 | HEAD        | 顯示所有產品資料
+products.show     |/products/{Product}       | GET                 | HEAD        | 顯示單一產品資料
+products.create   |/products/create          | GET                 | HEAD        | 顯示新增產品的表單
+products.store    |/products                 | POST                | POST        | 儲存新增的產品
+products.edit     |/products/{Product}/edit  | GET                 | HEAD        | 顯示編輯產品的表單
+products.update   |/products/{Product}       | PUT                 | PATCH       | 儲存編輯的產品資料
+products.destroy  |/products/{Product}       | DELETE              | DELETE      | 刪除產品資料
 
 */
